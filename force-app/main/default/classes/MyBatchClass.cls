@@ -2,7 +2,7 @@ public with sharing class MyBatchClass implements Database.Batchable<sObject>, D
     String query = 'select id, name from Account';
     Integer executeCount = 0;
     Integer recordCount = 0;
-
+    
     public Database.QueryLocator start(Database.BatchableContext BC) {
         System.debug('Came to start method @ ' + System.now());
         return (Database.getQueryLocator(query));
